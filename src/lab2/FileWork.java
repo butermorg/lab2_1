@@ -7,13 +7,14 @@ public class FileWork {
     String data;
     String filename;
     RandomAccessFile file;
-    public void Read() throws IOException {
+    public String Read() throws IOException {
         filename = "123.txt";
         file = new RandomAccessFile(new File(filename), "r");
         //чтение информации из заданного файла
         data = file.readLine();
-        file.close();
+        file.close();   
         System.out.println("Информация из файла: " + data);
+        return data;
 }
     public void found () throws IOException{
     data = data.replaceAll("\\pP", "");
